@@ -9,7 +9,7 @@ export default function Board(props) {
             <Card 
               key={cardItemData.id} 
               title={cardItemData.name} 
-              imgUrl={cardItemData.filename} 
+              imgUrl={cardItemData.image} 
               cardId={cardItemData.id} 
               onCardClick={props.onCardClick} 
               />)}

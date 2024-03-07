@@ -31,10 +31,10 @@ function App() {
   }
 
   async function fetchData() {
-    fetch(`https://api.api-onepiece.com/v2/fruits/en`)
+    fetch(`https://rickandmortyapi.com/api/character?page=${Math.floor(Math.random() * 41)}`)
       .then((response) => response.json())
       .then((data) => {
-        const shuffledArray = shuffleArray(data);
+        const shuffledArray = shuffleArray(data.results);
         setCardsData(shuffledArray);
       });
   }
@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
-      <h1>One Piece Devil Fruit Card Memory Game</h1>
+      <h1>Rick and Morty Card Memory Game</h1>
       <div className="App-body">
         <h3>Get as many points as possible by clicking on a card only once!</h3>
         <Scoreboard currentScore = {currentScore} bestScore = {bestScore} />
